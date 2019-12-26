@@ -5,4 +5,8 @@ class Geolocation:
 		self.geolocation = Nominatim(user_agent='WeatherApp')
 
 	def get_location(self):
-		raise Exception("Function not yet defined")
+		loc = input("What location? ")
+		location = self.geolocation.geocode(loc)
+		longitude,latitude = location.longitude, location.latitude
+
+		return longitude, latitude
